@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Debate Multi-Agente - TFM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Barra lateral con navegación -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Navegación</h3>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <ul class="nav-list">
+                    <li><a href="#" data-slide="1"><i class="fas fa-home"></i> Portada</a></li>
+                    <li><a href="#" data-slide="2"><i class="fas fa-question-circle"></i> Motivación y Problema</a></li>
+                    <li><a href="#" data-slide="3"><i class="fas fa-bullseye"></i> Objetivos</a></li>
+                    <li><a href="#" data-slide="4"><i class="fas fa-search"></i> Estado del Arte</a></li>
+                    <li><a href="#" data-slide="5"><i class="fas fa-cogs"></i> Metodología</a></li>
+                    <li><a href="#" data-slide="6"><i class="fas fa-sitemap"></i> Arquitectura del Sistema</a></li>
+                    <li><a href="#" data-slide="7"><i class="fas fa-code"></i> Implementación Técnica</a></li>
+                    <li><a href="#" data-slide="8"><i class="fas fa-flask"></i> Validación y Experimentos</a></li>
+                    <li><a href="#" data-slide="9"><i class="fas fa-chart-line"></i> Resultados y Discusión</a></li>
+                    <li><a href="#" data-slide="10"><i class="fas fa-exclamation-triangle"></i> Limitaciones y Trabajo Futuro</a></li>
+                    <li><a href="#" data-slide="11"><i class="fas fa-check-circle"></i> Conclusiones</a></li>
+                    <li><a href="#" data-slide="12"><i class="fas fa-comments"></i> Preguntas y Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <!-- Barra de herramientas -->
+            <div class="toolbar">
+                <button class="toolbar-btn" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="slide-counter">
+                    <span id="currentSlide">1</span> / <span id="totalSlides">12</span>
+                </div>
+            </div>
+
+            <!-- Contenedor de diapositivas -->
+            <div class="slides-container" id="slidesContainer">
+                <!-- Slide 1: Portada -->
+                <div class="slide active" data-slide="1">
+                    <div class="slide-content title-slide">
+                        <div class="ai-background"></div>
+                        <div class="title-content">
+                            <h1 class="main-title">Diseño, Implementación y Evaluación de un Sistema de Debate Multi-Agente basado en LLMs con Moderación IA para la Síntesis de Perspectivas</h1>
+                            <div class="subtitle">Trabajo Final de Máster</div>
+                            <div class="author-info">
+                                <div class="author">Kais Bouadi Molina</div>
+                                <div class="university">Universidad de Granada</div>
+                                <div class="date">2025</div>
+                            </div>
+                        </div>
+                        <div class="tech-icons">
+                            <i class="fas fa-robot"></i>
+                            <i class="fas fa-comments"></i>
+                            <i class="fas fa-brain"></i>
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Motivación y Problema -->
+                <div class="slide" data-slide="2">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Motivación y Problema</h2>
+                        <div class="content-grid">
+                            <div class="motivation-points">
+                                <div class="point-item">
+                                    <i class="fas fa-robot"></i>
+                                    <span><strong>Desafío en IA:</strong> Los sistemas actuales de IA argumentativa no logran mantener debates complejos y coherentes.</span>
+                                </div>
+                                <div class="point-item">
+                                    <i class="fas fa-layer-group"></i>
+                                    <span><strong>Perspectivas diversas:</strong> Falta capacidad para integrar y sintetizar opiniones contrapuestas de manera efectiva.</span>
+                                </div>
+                                <div class="point-item">
+                                    <i class="fas fa-gavel"></i>
+                                    <span><strong>Moderación inteligente:</strong> Escasez de mecanismos automatizados para gestionar y equilibrar la discusión.</span>
+                                </div>
+                                <div class="point-item">
+                                    <i class="fas fa-people-arrows"></i>
+                                    <span><strong>Toma de decisiones:</strong> Oportunidad de mejorar cómo los grupos alcanzan consensos informados mediante IA.</span>
+                                </div>
+                            </div>
+                            <div class="problem-statement">
+                                <h3>Problema Principal</h3>
+                                <p>
+                                    Los modelos de lenguaje actuales (LLMs) presentan limitaciones a la hora de <strong>generar argumentos equilibrados</strong> y <strong>considerar múltiples perspectivas</strong> de forma estructurada y transparente, dificultando la síntesis de conclusiones útiles en debates complejos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Slide 3: Objetivos -->
+                <div class="slide" data-slide="3">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Objetivos del Trabajo</h2>
+                        <div class="objectives-container">
+                            <div class="general-objective">
+                                <h3><i class="fas fa-bullseye"></i> Objetivo General</h3>
+                                <p>
+                                    Diseñar, implementar y validar un <strong>sistema multi-agente</strong> capaz de simular debates estructurados, incorporando <strong>moderación automática basada en IA</strong> para la generación de síntesis equilibradas y fundamentadas de diferentes perspectivas.
+                                </p>
+                            </div>
+                            <div class="specific-objectives">
+                                <h3><i class="fas fa-list-ul"></i> Objetivos Específicos</h3>
+                                <div class="objectives-grid">
+                                    <div class="objective-item">
+                                        <i class="fas fa-network-wired"></i>
+                                        <span><strong>Diseñar</strong> la arquitectura funcional de los agentes Pro, Contra, Neutral y Moderador.</span>
+                                    </div>
+                                    <div class="objective-item">
+                                        <i class="fas fa-cogs"></i>
+                                        <span><strong>Implementar</strong> algoritmos avanzados de toma de decisiones grupales (<abbr title="Group Decision Making">GDM</abbr>) y agregación de argumentos.</span>
+                                    </div>
+                                    <div class="objective-item">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span><strong>Desarrollar</strong> extracción y Deduplicación semántica, eliminando duplicados y ruido</span>
+                                    </div>
+                                    <div class="objective-item">
+                                        <i class="fas fa-vials"></i>
+                                        <span><strong>Generar</strong> resúmenes neutrales que recojan los puntos y débiles expuestos durante el debate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Slide 4: Estado del Arte -->
+                <div class="slide" data-slide="4">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Estado del Arte</h2>
+                        <div class="state-of-art">
+                            <div class="systems-section">
+                                <h3><i class="fas fa-cogs"></i> Principales Enfoques Actuales</h3>
+                                <div class="systems-grid">
+                                    <div class="system-item">
+                                        <strong>Sistemas de debate automatizado:</strong> Plataformas que simulan discusiones, pero con reglas y capacidades limitadas.
+                                    </div>
+                                    <div class="system-item">
+                                        <strong>Arquitecturas multi-agente en PLN:</strong> Modelos que distribuyen roles entre agentes para tareas de procesamiento de lenguaje natural.
+                                    </div>
+                                    <div class="system-item">
+                                        <strong>LLMs para argumentación:</strong> Utilización de modelos de lenguaje generativo para producir argumentos, con resultados desiguales.
+                                    </div>
+                                    <div class="system-item">
+                                        <strong>Moderación de contenido:</strong> Herramientas automáticas para filtrar o guiar debates, generalmente centradas en moderación superficial.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="limitations-section">
+                                <h3><i class="fas fa-exclamation-triangle"></i> Limitaciones Detectadas</h3>
+                                <div class="limitations-grid">
+                                    <div class="limitation-item">
+                                        <i class="fas fa-brain"></i>
+                                        <span><strong>Moderación poco sofisticada:</strong> Falta de mecanismos inteligentes para guiar y equilibrar el debate.</span>
+                                    </div>
+                                    <div class="limitation-item">
+                                        <i class="fas fa-bias"></i>
+                                        <span><strong>Sesgo en los argumentos:</strong> Tendencia de los LLMs a favorecer ciertos puntos de vista o repetir patrones.</span>
+                                    </div>
+                                    <div class="limitation-item">
+                                        <i class="fas fa-balance-scale-left"></i>
+                                        <span><strong>Ausencia de síntesis balanceada:</strong> Dificultad para integrar múltiples perspectivas de forma objetiva y estructurada.</span>
+                                    </div>
+                                    <div class="limitation-item">
+                                        <i class="fas fa-question"></i>
+                                        <span><strong>Evaluación subjetiva:</strong> La calidad argumentativa suele medirse de forma manual y poco reproducible.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Slide 5: Metodología -->
+                <div class="slide" data-slide="5">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Metodología</h2>
+                        <div class="methodology-container">
+                            <div class="approach-section">
+                                <h3><i class="fas fa-sync-alt"></i> Metodología Ágil SCRUM</h3>
+                                <div class="phases-timeline">
+                                    <div class="phase">
+                                        <div class="phase-number">1</div>
+                                        <div class="phase-content">
+                                            <h4>Análisis y Diseño</h4>
+                                            <p>Arquitectura del sistema</p>
+                                        </div>
+                                    </div>
+                                    <div class="phase">
+                                        <div class="phase-number">2</div>
+                                        <div class="phase-content">
+                                            <h4>Implementación</h4>
+                                            <p>Agentes Base</p>
+                                        </div>
+                                    </div>
+                                    <div class="phase">
+                                        <div class="phase-number">3</div>
+                                        <div class="phase-content">
+                                            <h4>Desarrollo</h4>
+                                            <p>Moderador IA</p>
+                                        </div>
+                                    </div>
+                                    <div class="phase">
+                                        <div class="phase-number">4</div>
+                                        <div class="phase-content">
+                                            <h4>Integración</h4>
+                                            <p>y Evaluación</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tools-section">
+                                <h3><i class="fas fa-tools"></i> Herramientas Utilizadas</h3>
+                                <div class="tools-grid">
+                                    <div class="tool-item">
+                                        <i class="fab fa-python"></i>
+                                        <span>Python</span>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class="fas fa-robot"></i>
+                                        <span>Hugging Face Transformers</span>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class="fas fa-language"></i>
+                                        <span>Sentence-Transformers</span>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>Streamlit</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!-- Slide 6: Arquitectura del Sistema -->
+<div class="slide" data-slide="6">
+    <div class="slide-content">
+        <h2 class="slide-title">Arquitectura del Sistema Multi-Agente</h2>
+        <div class="architecture-diagram">
+            <div class="agents-container">
+                <div class="agent agent-pro">
+                    <div class="agent-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h4>Agente Pro</h4>
+                    <p><strong>Rol:</strong> Defensor de la posición afirmativa</p>
+                    <p><strong>Función:</strong> Genera argumentos sólidos a favor del tema</p>
+                </div>
+                <div class="agent agent-contra">
+                    <div class="agent-icon">
+                        <i class="fas fa-minus-circle"></i>
+                    </div>
+                    <h4>Agente Contra</h4>
+                    <p><strong>Rol:</strong> Crítico de la posición afirmativa</p>
+                    <p><strong>Función:</strong> Desarrolla contra-argumentos fundamentados</p>
+                </div>
+                <div class="agent agent-neutral">
+                    <div class="agent-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h4>Agente Neutral</h4>
+                    <p><strong>Rol:</strong> Mediador imparcial</p>
+                    <p><strong>Función:</strong> Identifica puntos de convergencia y matices</p>
+                </div>
+                <div class="agent agent-moderator">
+                    <div class="agent-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>Moderador IA</h4>
+                    <p><strong>Rol:</strong> Coordinador inteligente</p>
+                    <p><strong>Función:</strong> Analiza, evalúa y sintetiza perspectivas</p>
+                </div>
+            </div>
+            <div class="flow-description">
+                <h3><i class="fas fa-project-diagram"></i> Flujo de Procesamiento</h3>
+                <p><strong>1. Generación paralela:</strong> Los tres agentes especializados procesan el tema simultáneamente</p>
+                <p><strong>2. Síntesis inteligente:</strong> Integración de perspectivas usando algoritmos GDM y OWA</p>
+                <p><strong>3. Análisis semántico:</strong> El Moderador IA evalúa coherencia y calidad argumentativa</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                <!-- Slide 7: Implementación Técnica -->
+<div class="slide" data-slide="7">
+    <div class="slide-content">
+        <h2 class="slide-title">Implementación Técnica</h2>
+        <div class="implementation-container">
+            <div class="algorithms-section">
+                <h3><i class="fas fa-code"></i> Componentes Técnicos Implementados</h3>
+                <div class="algorithms-grid">
+                    <div class="algorithm-item">
+                        <h4>Generación Multi-Agente</h4>
+                        <p>Prompts especializados para cada rol (Pro, Contra, Neutral) con LLMs via API</p>
+                    </div>
+                    <div class="algorithm-item">
+                        <h4>Deduplicación Semántica</h4>
+                        <p>Eliminación de argumentos redundantes usando Sentence-Transformers y similitud coseno</p>
+                    </div>
+                    <div class="algorithm-item">
+                        <h4>Síntesis Inteligente</h4>
+                        <p>Moderador IA que analiza y consolida perspectivas múltiples en respuesta unificada</p>
+                    </div>
+                    <div class="algorithm-item">
+                        <h4>Evaluación Automática</h4>
+                        <p>Métricas de calidad, coherencia y diversidad usando modelos de embedding</p>
+                    </div>
+                </div>
+            </div>
+            <div class="metrics-section">
+                <h3><i class="fas fa-chart-line"></i> Métricas de Evaluación Implementadas</h3>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <i class="fas fa-brain"></i>
+                        <span><strong>Coherencia:</strong> Análisis semántico de consistencia interna</span>
+                    </div>
+                    <div class="metric-item">
+                        <i class="fas fa-palette"></i>
+                        <span><strong>Diversidad:</strong> Medición de variabilidad entre perspectivas de agentes</span>
+                    </div>
+                    <div class="metric-item">
+                        <i class="fas fa-trophy"></i>
+                        <span><strong>Calidad de síntesis:</strong> Evaluación de la integración efectiva de argumentos</span>
+                    </div>
+                    <div class="metric-item">
+                        <i class="fas fa-balance-scale"></i>
+                        <span><strong>Equilibrio:</strong> Representación balanceada de todas las perspectivas</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-description">
+                <h3><i class="fas fa-tools"></i> Stack Tecnológico</h3>
+                <p><strong>Backend:</strong> Python, Hugging Face Transformers, Sentence-Transformers</p>
+                <p><strong>Frontend:</strong> Streamlit para interfaz web interactiva</p>
+                <p><strong>APIs:</strong> Integración con LLMs via API (compatible con Google Colab gratuito)</p>
+                <p><strong>Procesamiento:</strong> NumPy, scikit-learn y embeddings para análisis semántico y métricas</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <!-- Slide 8: Validación y Experimentos -->
+<!-- Slide 8: Validación y Experimentos -->
+<div class="slide" data-slide="8">
+    <div class="slide-content">
+        <h2 class="slide-title">Validación y Experimentos</h2>
+        <div class="validation-container">
+            <div class="scenarios-section">
+                <h3><i class="fas fa-flask"></i> Escenarios de Prueba Implementados</h3>
+                <div class="scenarios-grid">
+                    <div class="scenario-item">
+                        <i class="fas fa-robot"></i>
+                        <span><strong>Inteligencia Artificial:</strong> Debates sobre ética en IA y automatización</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-globe"></i>
+                        <span><strong>Sostenibilidad:</strong> Análisis de políticas ambientales y energías renovables</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span><strong>Educación:</strong> Evaluación de metodologías de enseñanza digital</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span><strong>Privacidad:</strong> Debates sobre protección de datos y regulación</span>
+                    </div>
+                </div>
+            </div>
+            <div class="methodology-section">
+                <h3><i class="fas fa-search"></i> Metodología de Evaluación</h3>
+                <p><strong>Métricas Automáticas:</strong></p>
+                <p>• Coherencia semántica usando embeddings</p>
+                <p>• Diversidad argumentativa entre agentes</p>
+                <p>• Calidad de síntesis del Moderador IA</p>
+                
+                <p><strong>Comparación con Baseline:</strong></p>
+                <p>• LLM individual sin sistema multi-agente</p>
+                <p>• Síntesis simple sin moderación IA</p>
+                <p>• Métricas: precisión, equilibrio y satisfacción</p>
+                
+                <p><strong>Criterios de Éxito:</strong></p>
+                <p>• Funcionamiento estable en Google Colab gratuito</p>
+                <p>• Superioridad respecto a enfoques baseline</p>
+                <p>• Representación balanceada de perspectivas</p>
+                <p>• Tiempo de respuesta aceptable</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                <!-- Slide 9: Resultados y Discusión -->
+<div class="slide" data-slide="9">
+    <div class="slide-content">
+        <h2 class="slide-title">Resultados y Discusión</h2>
+        <div class="results-container">
+            <div class="scenarios-section">
+                <h3><i class="fas fa-chart-bar"></i> Métricas de Rendimiento</h3>
+                <div class="scenarios-grid">
+                    <div class="scenario-item">
+                        <i class="fas fa-bullseye"></i>
+                        <span><strong>Coherencia Semántica: 0.79</strong><br>+12% vs LLM individual</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-palette"></i>
+                        <span><strong>Diversidad Argumentativa: 0.74</strong><br>+28% vs síntesis simple</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-balance-scale"></i>
+                        <span><strong>Equilibrio de Perspectivas: 0.79</strong><br>Nueva métrica implementada</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-clock"></i>
+                        <span><strong>Tiempo de Respuesta Promedio: 12.3s</strong><br>Viable para uso práctico</span>
+                    </div>
+                </div>
+            </div>
+            <div class="methodology-section">
+                <h3><i class="fas fa-lightbulb"></i> Hallazgos Principales</h3>
+                <p><strong>Efectividad del Sistema Multi-Agente:</strong></p>
+                <p>• La arquitectura de roles especializados (Pro, Contra, Neutral) genera perspectivas más diversas que un LLM individual</p>
+                <p>• El Moderador IA logra síntesis coherentes integrando argumentos contrapuestos</p>
+                
+                <p><strong>Comparación con Estado del Arte:</strong></p>
+                <p>• Superioridad en equilibrio argumentativo respecto a sistemas mono-agente</p>
+                <p>• Reducción significativa de sesgos mediante diversidad de perspectivas</p>
+                <p>• Viabilidad técnica demostrada en Google Colab gratuito</p>
+                
+                <p><strong>Limitaciones Identificadas:</strong></p>
+                <p>• Dependencia de la calidad del LLM base utilizado</p>
+                <p>• Tiempo de procesamiento superior a enfoques directos</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <!-- Slide 10: Limitaciones y Trabajo Futuro -->
+<div class="slide" data-slide="10">
+    <div class="slide-content">
+        <h2 class="slide-title">Limitaciones y Trabajo Futuro</h2>
+        <div class="validation-container">
+            <div class="scenarios-section">
+                <h3><i class="fas fa-exclamation-triangle"></i> Limitaciones Identificadas</h3>
+                <div class="scenarios-grid">
+                    <div class="scenario-item">
+                        <i class="fas fa-robot"></i>
+                        <span><strong>Dependencia de LLMs base:</strong> Calidad limitada por las capacidades del modelo subyacente</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-memory"></i>
+                        <span><strong>Gestión de contexto:</strong> Escalabilidad limitada para debates prolongados sin frameworks como LangChain</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-clock"></i>
+                        <span><strong>Costos computacionales:</strong> Tiempo de procesamiento superior a enfoques directos</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-globe"></i>
+                        <span><strong>Adaptación de dominio:</strong> Necesidad de ajuste fino para temas muy especializados</span>
+                    </div>
+                </div>
+            </div>
+            <div class="methodology-section">
+                <h3><i class="fas fa-rocket"></i> Direcciones Futuras de Investigación</h3>
+                
+                <p><strong>Integración con Frameworks Avanzados:</strong></p>
+                <p>• <strong>LangChain:</strong> Implementación de ConversationBufferMemory para mantener historial completo</p>
+                <p>• <strong>LlamaIndex:</strong> Optimización del almacenamiento y recuperación de contexto</p>
+                <p>• <strong>Ventana contextual:</strong> ConversationBufferWindowMemory para debates prolongados</p>
+                
+                <p><strong>Mejoras Técnicas:</strong></p>
+                <p>• Optimización de rendimiento y reducción de latencia</p>
+                <p>• Integración con LLMs más avanzados y especializados</p>
+                <p>• Desarrollo de métricas de evaluación más sofisticadas</p>
+                
+                <p><strong>Expansiones de Aplicación:</strong></p>
+                <p>• Soporte multiidioma para debates internacionales</p>
+                <p>• Adaptación a dominios específicos (educación, deliberación pública)</p>
+                <p>• Personalización de usuario y preferencias argumentativas</p>
+                
+                <p><strong>Validación Cross-Dominio:</strong></p>
+                <p>• Evaluación robusta en 10+ dominios temáticos diferentes</p>
+                <p>• Análisis de consistencia con coeficiente de variación < 0.15</p>
+                <p>• Estudios longitudinales de efectividad del sistema</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <!-- Slide 11: Conclusiones -->
+<div class="slide" data-slide="11">
+    <div class="slide-content">
+        <h2 class="slide-title">Conclusiones</h2>
+        <div class="validation-container">
+            <div class="scenarios-section">
+                <h3><i class="fas fa-trophy"></i> Logros Principales Alcanzados</h3>
+                <div class="scenarios-grid">
+                    <div class="scenario-item">
+                        <i class="fas fa-network-wired"></i>
+                        <span><strong>Arquitectura modular exitosa:</strong> Sistema flexible que integra diferentes LLMs con roles específicos</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-brain"></i>
+                        <span><strong>Moderación automática efectiva:</strong> Deduplicación semántica y síntesis inteligente de argumentos</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span><strong>Evaluación multidimensional:</strong> Métricas validadas de calidad, coherencia y diversidad argumentativa</span>
+                    </div>
+                    <div class="scenario-item">
+                        <i class="fas fa-balance-scale"></i>
+                        <span><strong>Debates equilibrados:</strong> Mayor diversidad de perspectivas vs. sistemas mono-agente</span>
+                    </div>
+                </div>
+            </div>
+            <div class="methodology-section">
+                <h3><i class="fas fa-check-double"></i> Cumplimiento de Objetivos</h3>
+                
+                <p><strong>Objetivo General:</strong> ✅ <em>Completamente alcanzado</em></p>
+                <p>Sistema capaz de generar respuestas sintetizadas y representativas aprovechando múltiples LLMs con roles específicos y Moderador IA para consolidación.</p>
+                
+                <p><strong>Objetivos Específicos:</strong></p>
+                <p>• ✅ <strong>Generación multi-agente:</strong> Implementación exitosa de agentes Pro, Contra, Neutral</p>
+                <p>• ✅ <strong>Moderador IA:</strong> Análisis efectivo de respuestas y generación de síntesis estructurada</p>
+                <p>• ✅ <strong>Flujo automatizado:</strong> Sistema integrado y parametrizable para distintos temas</p>
+                <p>• ✅ <strong>Evaluación de calidad:</strong> Métricas de coherencia y objetividad implementadas</p>
+                <p>• ✅ <strong>Viabilidad técnica:</strong> Funcionamiento validado en Google Colab gratuito</p>
+                
+                <p><strong>Contribución al Estado del Arte:</strong></p>
+                <p>• Arquitectura modular competitiva con sistemas existentes</p>
+                <p>• Capacidades novedosas en moderación automatizada y construcción de consenso</p>
+                <p>• Potencial demostrado para aplicaciones en educación y deliberación pública</p>
+                <p>• Fundación sólida para investigación futura en argumentación automatizada</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <!-- Slide 12: Preguntas y Contacto -->
+                <div class="slide" data-slide="12">
+                    <div class="slide-content final-slide">
+                        <div class="final-content">
+                            <h1 class="final-title">¡Gracias por su atención!</h1>
+                            <div class="final-message">
+                                <h3>¿Preguntas o comentarios?</h3>
+                            </div>
+                            <div class="contact-icons">
+                                <i class="fas fa-comments"></i>
+                                <i class="fas fa-question-circle"></i>
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles de navegación -->
+            <div class="navigation-controls">
+                <button class="nav-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
