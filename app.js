@@ -342,7 +342,7 @@ class PresentationApp {
     }
     
     // Método para presentación automática (opcional)
-    startAutoPresentation(intervalMs = 10000) {
+    startAutoPresentation(intervalMs = 1000000) {
         this.autoInterval = setInterval(() => {
             if (this.currentSlide < this.totalSlides) {
                 this.nextSlide();
