@@ -1345,6 +1345,20 @@ body {
   box-shadow: var(--shadow);
 }
 
+.flow-description h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
 .flow-description p {
   font-size: 1.125rem;
   line-height: 1.6;
@@ -1746,12 +1760,14 @@ body {
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 2rem;
+  color: rgb(255, 255, 255);
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .final-message h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: rgb(255, 255, 255);
   font-weight: 600;
 }
 
