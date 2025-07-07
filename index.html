@@ -531,74 +531,139 @@
     </div>
 </div>
 
-                <!-- Slide 13: Demostración del Frontend -->
+<!-- Slide 13: Pantalla Principal -->
 <div class="slide" data-slide="11">
     <div class="slide-content">
-        <h2 class="slide-title">Demostración del Sistema</h2>
+        <h2 class="slide-title">Interfaz Principal del Sistema</h2>
         <div class="demo-container">
-            <div class="carousel-section">
-                <h3><i class="fas fa-desktop"></i> Interfaz de Usuario - Streamlit</h3>
-                <div class="carousel-container">
-                    <div class="carousel-wrapper">
-                        <div class="carousel-slide active">
-                            <img src="frontend-1.PNG" alt="Pantalla principal del sistema">
-                            <div class="carousel-caption">Pantalla principal - Entrada de tema de debate</div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="frontend-2.PNG" alt="Configuración de agentes">
-                            <div class="carousel-caption">Configuración de agentes y parámetros</div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="frontend-3.PNG" alt="Proceso de debate en curso">
-                            <div class="carousel-caption">Proceso de debate multi-agente en ejecución</div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="frontend-4.PNG" alt="Resultados del debate">
-                            <div class="carousel-caption">Resultados y síntesis final del Moderador IA</div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="frontend-5.PNG" alt="Métricas de evaluación">
-                            <div class="carousel-caption">Métricas de evaluación y análisis de calidad</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Controles del carrusel -->
-                    <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn next-btn" onclick="changeSlide(1)">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    
-                    <!-- Indicadores -->
-                    <div class="carousel-indicators">
-                        <span class="indicator active" onclick="currentSlide(1)"></span>
-                        <span class="indicator" onclick="currentSlide(2)"></span>
-                        <span class="indicator" onclick="currentSlide(3)"></span>
-                        <span class="indicator" onclick="currentSlide(4)"></span>
-                        <span class="indicator" onclick="currentSlide(5)"></span>
-                    </div>
+            <div class="image-section">
+                <div class="demo-image-container">
+                    <img src="images/frontend-1.png" alt="Pantalla principal del sistema" class="demo-image">
+                    <div class="image-caption">Pantalla de entrada - Configuración del tema de debate</div>
                 </div>
             </div>
-            
             <div class="features-section">
                 <h3><i class="fas fa-star"></i> Características Principales</h3>
-                <div class="features-grid">
+                <div class="features-list">
                     <div class="feature-item">
-                        <i class="fas fa-user-friendly"></i>
-                        <span><strong>Interfaz intuitiva:</strong> Diseño limpio y fácil de usar</span>
+                        <i class="fas fa-edit"></i>
+                        <span><strong>Entrada de tema:</strong> Campo de texto para definir el tema del debate</span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-cogs"></i>
-                        <span><strong>Configuración flexible:</strong> Parámetros ajustables para diferentes escenarios</span>
+                        <span><strong>Configuración:</strong> Parámetros ajustables para el sistema multi-agente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 14: Configuración de Agentes -->
+<div class="slide" data-slide="12">
+    <div class="slide-content">
+        <h2 class="slide-title">Configuración de Agentes</h2>
+        <div class="demo-container">
+            <div class="image-section">
+                <div class="demo-image-container">
+                    <img src="images/frontend-2.png" alt="Configuración de agentes" class="demo-image">
+                    <div class="image-caption">Panel de configuración de roles y parámetros</div>
+                </div>
+            </div>
+            <div class="features-section">
+                <h3><i class="fas fa-users"></i> Configuración Multi-Agente</h3>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-user-plus"></i>
+                        <span><strong>Roles definidos:</strong> Pro, Contra, Neutral y Moderador IA</span>
                     </div>
                     <div class="feature-item">
+                        <i class="fas fa-sliders-h"></i>
+                        <span><strong>Parámetros:</strong> Ajuste de temperatura, tokens y modelo LLM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 15: Proceso en Ejecución -->
+<div class="slide" data-slide="13">
+    <div class="slide-content">
+        <h2 class="slide-title">Debate Multi-Agente en Proceso</h2>
+        <div class="demo-container">
+            <div class="image-section">
+                <div class="demo-image-container">
+                    <img src="images/frontend-3.png" alt="Proceso de debate en curso" class="demo-image">
+                    <div class="image-caption">Generación simultánea de argumentos por los agentes</div>
+                </div>
+            </div>
+            <div class="features-section">
+                <h3><i class="fas fa-sync"></i> Procesamiento en Tiempo Real</h3>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-spinner"></i>
+                        <span><strong>Ejecución paralela:</strong> Los tres agentes procesan simultáneamente</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clock"></i>
+                        <span><strong>Indicador de progreso:</strong> Seguimiento visual del proceso</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <!-- Slide 16: Resultados y Síntesis -->
+<div class="slide" data-slide="14">
+    <div class="slide-content">
+        <h2 class="slide-title">Resultados del Debate</h2>
+        <div class="demo-container">
+            <div class="image-section">
+                <div class="demo-image-container">
+                    <img src="images/frontend-4.png" alt="Resultados del debate" class="demo-image">
+                    <div class="image-caption">Síntesis final generada por el Moderador IA</div>
+                </div>
+            </div>
+            <div class="features-section">
+                <h3><i class="fas fa-chart-bar"></i> Visualización de Resultados</h3>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-brain"></i>
+                        <span><strong>Síntesis inteligente:</strong> Consolidación de perspectivas múltiples</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-balance-scale"></i>
+                        <span><strong>Argumentos equilibrados:</strong> Representación balanceada de posiciones</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <!-- Slide 17: Métricas de Evaluación -->
+<div class="slide" data-slide="15">
+    <div class="slide-content">
+        <h2 class="slide-title">Métricas de Evaluación</h2>
+        <div class="demo-container">
+            <div class="image-section">
+                <div class="demo-image-container">
+                    <img src="images/frontend-5.png" alt="Métricas de evaluación" class="demo-image">
+                    <div class="image-caption">Dashboard de métricas automáticas de calidad</div>
+                </div>
+            </div>
+            <div class="features-section">
+                <h3><i class="fas fa-analytics"></i> Análisis Automático</h3>
+                <div class="features-list">
+                    <div class="feature-item">
                         <i class="fas fa-chart-line"></i>
-                        <span><strong>Visualización en tiempo real:</strong> Seguimiento del proceso de debate</span>
+                        <span><strong>Métricas cuantitativas:</strong> Coherencia, diversidad y equilibrio</span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-download"></i>
-                        <span><strong>Exportación de resultados:</strong> Descarga de síntesis y métricas</span>
+                        <span><strong>Exportación:</strong> Descarga de resultados y análisis</span>
                     </div>
                 </div>
             </div>
@@ -608,7 +673,7 @@
 
 
                 <!-- Slide 11: Conclusiones -->
-<div class="slide" data-slide="12">
+<div class="slide" data-slide="16">
     <div class="slide-content">
         <h2 class="slide-title">Conclusiones</h2>
         <div class="validation-container">
@@ -652,7 +717,7 @@
 </div>
 
                 <!-- Slide 12: Preguntas y Contacto -->
-                <div class="slide" data-slide="13">
+                <div class="slide" data-slide="17">
                     <div class="slide-content final-slide">
                         <div class="final-content">
                             <h1 class="final-title">¡Gracias por su atención!</h1>
