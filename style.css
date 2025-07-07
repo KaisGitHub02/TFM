@@ -2007,7 +2007,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
-    color: rgb(0,0,0);
+    color: black !important;
 }
 
 .feature-item {
@@ -2019,6 +2019,7 @@ body {
     border-radius: 8px;
     border-left: 3px solid #4CAF50;
     transition: all 0.3s ease;
+    color: black !important;
 }
 
 .feature-item:hover {
@@ -2030,6 +2031,7 @@ body {
     color: #4CAF50;
     font-size: 1.2rem;
     min-width: 20px;
+    color: black !important;
 }
 
 .feature-item span {
