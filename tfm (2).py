@@ -55,7 +55,7 @@ from huggingface_hub.utils import HfHubHTTPError
 import time
 
 # Reemplaza esto con tu clave de API de Hugging Face
-api_token = "Xxxxxxxx"
+api_token = "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"
 
 # Inicializa el cliente de inferencia con tu clave de API
 client = InferenceClient(provider="hf-inference", token=api_token)
@@ -64,7 +64,7 @@ client = InferenceClient(provider="hf-inference", token=api_token)
 accessible_models = []
 
 # Obtiene modelos que admiten la tarea de generación de texto
-models = list_models(filter="text-generation", sort="downloads", limit=200)
+models = list_models(filter="text-generation", sort="downloads", limit=50)
 
 for model in models:
     model_id = model.modelId
@@ -233,7 +233,7 @@ Este código implementa un sistema seguro de autenticación para Hugging Face Hu
 - Implementa autenticación programática con huggingface_hub.login()
 """
 
-HF_TOKEN = "Xxxx"
+HF_TOKEN = "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"
 
 if HF_TOKEN.startswith("hf_..."):
     print("⚠️ ADVERTENCIA: Por favor, reemplaza 'hf_...' con tu token real de Hugging Face.")
@@ -1548,8 +1548,6 @@ print("\n=== GENERANDO RESUMEN DEL MODERADOR ===")
 summary = "Error: El moderador no pudo generar un resumen." # Valor por defecto
 
 # --- Recordatorio del Modelo Moderador Actual (Celda 8) ---
-# Asegúrate de que en Celda 8 esté activo el modelo que quieres usar
-# Ejemplo: moderator_model_id = "mistralai/Mistral-7B-Instruct-v0.3"
 try:
     print(f"Intentando generar resumen con el moderador: {moderator_model_id}")
 except NameError:
@@ -1584,14 +1582,14 @@ elif responses:
 
         # v4: Prompt MUY simple, eliminando la estructura forzada de 4 partes.
         moderador_prompt = f"""**Tarea del Moderador Experto:**
-Eres un moderador de debates. Has observado una discusión sobre "{topic}". A continuación se presentan las perspectivas de los participantes y un análisis de similitud.
+Eres un moderador de debates. Has observado una discusión sobre "{topic}". A continuación se presentan las perspectivas de los participantes y un análisis de similitud. {texto_respuestas_completas}
 
 SINTETIZA la discusión de manera **neutral y objetiva en uno o más párrafos coherentes**.
 Tu resumen debe cubrir los **argumentos principales** presentados, las áreas donde hubo cierto **acuerdo** (aunque sea en reconocer el problema) y los puntos clave de **desacuerdo** o las **perspectivas contrastantes**. Concluye con una visión general del estado del debate.
 NO añadas tu opinión personal. Basa tu resumen únicamente en el contenido proporcionado.
 
 **Síntesis del Debate:**
-""" # FIN DEL PROMPT SIMPLIFICADO
+"""
 
         # 3. Llamar al modelo moderador con reintentos (Manteniendo Temp 0.6)
         print(f"⏳ Generando síntesis con {moderator_model_id} (prompt v4 - simple, temp=0.6)...")
