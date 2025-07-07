@@ -1888,7 +1888,7 @@ body {
 
 .demo-image-container {
     position: relative;
-    max-width: 1200px; /* Aumentado de 900px */
+    max-width: 1000px; /* Aumentado de 900px */
     width: 100%;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
@@ -1899,7 +1899,7 @@ body {
 .demo-image {
     width: 100%;
     height: auto;
-    max-height: 700px; /* Aumentado de 400px a 700px */
+    max-height: 600px; /* Aumentado de 400px a 700px */
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
