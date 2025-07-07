@@ -1,7 +1,7 @@
 class PresentationApp {
     constructor() {
         this.currentSlide = 1;
-        this.totalSlides = 12;
+        this.totalSlides = 17;
         this.isAnimating = false;
         
         this.init();
