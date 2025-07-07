@@ -450,6 +450,47 @@ select.form-control {
   margin-bottom: var(--space-16);
 }
 
+/* Estilos para enlaces clickeables */
+.tech-stack-section a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.tech-stack-section a:hover {
+    color: #66BB6A;
+    border-bottom: 2px solid #4CAF50;
+    text-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+.tech-stack-section a:visited {
+    color: #4CAF50;
+}
+
+.tech-stack-section a:active {
+    color: #2E7D32;
+    transform: scale(0.98);
+}
+
+/* Efecto adicional para destacar el enlace */
+.tech-stack-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid #4CAF50;
+    text-align: center;
+}
+
+.tech-stack-section p {
+    margin: 0;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+
 /* Card component */
 .card {
   background-color: var(--color-surface);
